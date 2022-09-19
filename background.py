@@ -16,3 +16,5 @@ class Background(Turtle):
             self.bg.stamp()
             self.bg.goto(0, -280 + 40 * x)
             x += 1
+
+
