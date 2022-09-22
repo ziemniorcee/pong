@@ -1,7 +1,7 @@
 import time
 from turtle import Screen
 from background import Background
-from LeftPaddle import LeftPaddle
+from Paddle import Paddle
 
 screen = Screen()
 screen.setup(width=800, height=600)
@@ -10,18 +10,21 @@ screen.bgcolor("black")
 
 bg = Background()
 bg.create_bg()
-lp = LeftPaddle()
-lp.create()
+lp = Paddle(-350)
+rp = Paddle(350)
+
 screen.update()
 screen.listen()
 
 screen.onkey(lp.up, "Up")
 screen.onkey(lp.down, "Down")
+screen.onkey(rp.up, "w")
+screen.onkey(rp.down, "s")
 
 game_on = True
 while game_on:
     screen.update()
-    time.sleep(0.1)
+    time.sleep(0.01)
 
 screen.exitonclick()
 
