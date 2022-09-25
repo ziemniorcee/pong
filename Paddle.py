@@ -14,8 +14,8 @@ class Paddle(Turtle):
 
     def up(self):
         self.setheading(90)
-        self.forward(40)
+        self.forward(60)
 
     def down(self):
         self.setheading(270)
-        self.forward(40)
+        self.forward(60)

@@ -3,7 +3,7 @@ from turtle import Screen
 from background import Background
 from Paddle import Paddle
 from ball import Ball
-
+from scoreboard import Scoreboard
 
 screen = Screen()
 screen.setup(width=800, height=600)
@@ -14,7 +14,9 @@ bg = Background()
 bg.create_bg()
 lp = Paddle(-350)
 rp = Paddle(350)
-ball = Ball(screen,lp, rp)
+scoreboard = Scoreboard()
+
+ball = Ball(screen,lp, rp, scoreboard)
 
 screen.update()
 screen.listen()
@@ -27,8 +29,8 @@ screen.onkey(rp.down, "s")
 game_on = True
 while game_on:
     ball.move()
+    ball.end()
     screen.update()
     time.sleep(0.05)
 
 screen.exitonclick()
-
