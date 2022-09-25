@@ -9,15 +9,13 @@ class Paddle(Turtle):
         self.penup()
         self.goto(-x, 0)
         self.setheading(90)
-        self.shapesize(stretch_len=1)
+        self.shapesize(stretch_len=5)
+        self.speed("fastest")
 
     def up(self):
         self.setheading(90)
-        x = 0
-        while x < 20:
-            self.forward(1)
-            x += 1
+        self.forward(40)
 
     def down(self):
         self.setheading(270)
-        self.forward(20)
+        self.forward(40)
